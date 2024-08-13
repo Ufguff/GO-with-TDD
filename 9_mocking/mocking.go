@@ -32,7 +32,6 @@ const (
 func Countdown(out io.Writer, sleeper Sleeper) { // тут мы приняли интерфейс, который поможет тестировать
 	for i := countdownStart; i > 0; i-- {
 		fmt.Fprintln(out, i)
-		time.Sleep(1 * time.Second) // реальная отработка, но думаю мы заменим это на интерфейс
 		sleeper.Sleep()
 	}
 	fmt.Fprint(out, finalWord)
